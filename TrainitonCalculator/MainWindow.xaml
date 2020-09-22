@@ -41,7 +41,12 @@
 
         <TextBox  Grid.Row="1" Margin="50,0.4,49.6,286.8"
                   Height="30" IsEnabled="False"
+<<<<<<< HEAD
                   TextAlignment="Right" Padding="5" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+=======
+                  TextAlignment="Right" Padding="5"
+                  Name="screen" Text="0"/>
+>>>>>>> dc02465a925f8cccca98b81a3f980acdaae58804
 
         <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,29.4,-0.4,0.8" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
@@ -59,29 +64,45 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+<<<<<<< HEAD
             <Button Grid.Column="0" Grid.Row="0" Content="Sin"/>
             <Button Grid.Column="0" Grid.Row="1" Content= "^2"/>
 
+=======
+            <Button Grid.Column="0" Grid.Row="0" Content="Sin"
+                    Name="SinButton" Click="SinButton_Click"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="^2"/>
+>>>>>>> dc02465a925f8cccca98b81a3f980acdaae58804
             <Button Grid.Column="0" Grid.Row="2" Content="7" 
-                    Style="{StaticResource NumberButton}" />
+                    Style="{StaticResource NumberButton}" 
+                    Click="NumberClicked"/>
             <Button Grid.Column="0" Grid.Row="3" Content="4"
-                    Style="{StaticResource NumberButton}"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
             <Button Grid.Column="0" Grid.Row="4" Content="1"
-                    Style="{StaticResource NumberButton}"/>
-            <Button Grid.Column="0" Grid.Row="5" Content="-/+"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
+            <Button Grid.Column="0" Grid.Row="5" Content="-/+"
+                    Name="Nagate" Click="Nagate_Click"/>
 
             <Button Grid.Column="1" Grid.Row="0" Content="Cos"/>
-            <Button Grid.Column="1" Grid.Row="1" Content="C"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="C"
+                    Name="Clear" Click="Clear_Click"  />
             <Button Grid.Column="1" Grid.Row="2" Content="8"
-                    Style="{StaticResource NumberButton}"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
             <Button Grid.Column="1" Grid.Row="3" Content="5"
-                    Style="{StaticResource NumberButton}"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
             <Button Grid.Column="1" Grid.Row="4" Content="2"
-                    Style="{StaticResource NumberButton}"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
             <Button Grid.Column="1" Grid.Row="5" Content="0"
-                    Style="{StaticResource NumberButton}"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
 
             <Button Grid.Column="2" Grid.Row="0" Content="Tan"/>
+<<<<<<< HEAD
             <Button Grid.Column="2" Grid.Row="1">
                 <Path Data="M19.993,4.071H0.638C0.285,4.071,0,4.356,0,4.709v11.212c0,0.353,0.286,0.638,0.638,0.638h19.354
 		c0.353,0,0.638-0.285,0.638-0.638V4.709C20.63,4.356,20.345,4.071,19.993,4.071z M15.226,11.358H8.734l1.886,1.887
@@ -92,13 +113,21 @@
 
 
             </Button>
+=======
+            <Button Grid.Column="2" Grid.Row="1" Content="Back space"
+                    Name="BackSpace" Click="BackSpace_Click"/>
+>>>>>>> dc02465a925f8cccca98b81a3f980acdaae58804
             <Button Grid.Column="2" Grid.Row="2" Content="9"
-                    Style="{StaticResource NumberButton}"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
             <Button Grid.Column="2" Grid.Row="3" Content="6"
-                    Style="{StaticResource NumberButton}"/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
             <Button Grid.Column="2" Grid.Row="4" Content="3"
-                    Style="{StaticResource NumberButton}"/>
-            <Button Grid.Column="2" Grid.Row="5" Content="."/>
+                    Style="{StaticResource NumberButton}"
+                    Click="NumberClicked"/>
+            <Button Grid.Column="2" Grid.Row="5" Content="."
+                    Name="Dot" Click="Dot_Click"/>
 
             <Button Grid.Column="3" Grid.Row="0" Click="Button_Click">
                 <Path Data="M35.494,0c-0.43,0-0.811,0.273-0.947,0.681L19.734,44.64L9.35,27.482C9.169,27.183,8.844,27,8.494,27h-8v2h7.437
@@ -107,9 +136,11 @@
             </Button>
             <Button Grid.Column="3" Grid.Row="1" Content="/"/>
             <Button Grid.Column="3" Grid.Row="2" Content="X"/>
-            <Button Grid.Column="3" Grid.Row="3" Content="+"/>
+            <Button Grid.Column="3" Grid.Row="3" Content="+"
+                    Name="Add" Click="Add_Click"/>
             <Button Grid.Column="3" Grid.Row="4" Content="-"/>
-            <Button Grid.Column="3" Grid.Row="5" Content="="/>
+            <Button Grid.Column="3" Grid.Row="5" Content="="
+                    Name="Equals" Click="Equals_Click"/>
         </Grid>
     </Grid>
 </Window>
