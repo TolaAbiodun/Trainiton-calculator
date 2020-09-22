@@ -46,5 +46,10 @@ namespace TrainitonCalculator {
         private void SinButton_Click(object sender, RoutedEventArgs e) {
             screen.Text = _calculator.Sine();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
