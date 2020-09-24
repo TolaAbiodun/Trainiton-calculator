@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrainitonCalculator"
         mc:Ignorable="d"
-        Height="800"
-        Width="500"
+        Height="500"
+        Width="400"
         WindowState="Normal"
         WindowStartupLocation="CenterScreen"
         Title="Calculator">
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Margin" Value="10"/>
             <Setter Property="FontSize" Value="15"/>
         </Style>
 
 
         <Style TargetType="Button" x:Key="NumberButton">
-            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Margin" Value="10"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="FontSize" Value="15"/>
         </Style>
@@ -34,19 +34,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Standard" FontSize="40"
+        <TextBlock Text="Standard" FontSize="20"
                    FontWeight="Bold" 
-                   Margin="5,0,-0.4,29.6"
-                   Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                   Margin="11,4,-6.4,25.2"
+                   Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" RenderTransformOrigin="0.495,0.266"/>
+        
+         <TextBox Margin="10,36,9.6,17.2" Text="0"
+                 Height="30" TextWrapping="Wrap" IsEnabled="False"
+                 TextAlignment="Right" Padding="5" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                 x:Name="screen" />
 
-        <TextBox  Grid.Row="1" Margin="50,0.4,49.6,286.8"
-                  Height="30" IsEnabled="False"
-<<<<<<< HEAD
-                  TextAlignment="Right" Padding="5" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-=======
-                  TextAlignment="Right" Padding="5"
-                  Name="screen" Text="0"/>
->>>>>>> dc02465a925f8cccca98b81a3f980acdaae58804
 
         <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,29.4,-0.4,0.8" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
@@ -64,45 +61,58 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-<<<<<<< HEAD
+
             <Button Grid.Column="0" Grid.Row="0" Content="Sin"/>
+            
             <Button Grid.Column="0" Grid.Row="1" Content= "^2"/>
 
-=======
+
             <Button Grid.Column="0" Grid.Row="0" Content="Sin"
                     Name="SinButton" Click="SinButton_Click"/>
-            <Button Grid.Column="0" Grid.Row="1" Content="^2"/>
->>>>>>> dc02465a925f8cccca98b81a3f980acdaae58804
+            
+            <Button Grid.Column="0" Grid.Row="1" Content="^2" 
+                    Name="PowButton" Click="PowButton_Click"/>
+            
             <Button Grid.Column="0" Grid.Row="2" Content="7" 
                     Style="{StaticResource NumberButton}" 
                     Click="NumberClicked"/>
+            
             <Button Grid.Column="0" Grid.Row="3" Content="4"
                     Style="{StaticResource NumberButton}"
                     Click="NumberClicked"/>
+            
             <Button Grid.Column="0" Grid.Row="4" Content="1"
                     Style="{StaticResource NumberButton}"
                     Click="NumberClicked"/>
+            
             <Button Grid.Column="0" Grid.Row="5" Content="-/+"
                     Name="Nagate" Click="Nagate_Click"/>
 
-            <Button Grid.Column="1" Grid.Row="0" Content="Cos"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="Cos"
+                    Name="CosButton" Click="CosButton_Click"/>
+            
             <Button Grid.Column="1" Grid.Row="1" Content="C"
                     Name="Clear" Click="Clear_Click"  />
+            
             <Button Grid.Column="1" Grid.Row="2" Content="8"
                     Style="{StaticResource NumberButton}"
                     Click="NumberClicked"/>
+            
             <Button Grid.Column="1" Grid.Row="3" Content="5"
                     Style="{StaticResource NumberButton}"
                     Click="NumberClicked"/>
+            
             <Button Grid.Column="1" Grid.Row="4" Content="2"
                     Style="{StaticResource NumberButton}"
                     Click="NumberClicked"/>
+            
             <Button Grid.Column="1" Grid.Row="5" Content="0"
                     Style="{StaticResource NumberButton}"
                     Click="NumberClicked"/>
 
-            <Button Grid.Column="2" Grid.Row="0" Content="Tan"/>
-<<<<<<< HEAD
+            <Button Grid.Column="2" Grid.Row="0" Content="Tan"
+                    Name="TanButton" Click="TanButton_Click"/>
+
             <Button Grid.Column="2" Grid.Row="1">
                 <Path Data="M19.993,4.071H0.638C0.285,4.071,0,4.356,0,4.709v11.212c0,0.353,0.286,0.638,0.638,0.638h19.354
 		c0.353,0,0.638-0.285,0.638-0.638V4.709C20.63,4.356,20.345,4.071,19.993,4.071z M15.226,11.358H8.734l1.886,1.887
@@ -113,10 +123,16 @@
 
 
             </Button>
-=======
-            <Button Grid.Column="2" Grid.Row="1" Content="Back space"
-                    Name="BackSpace" Click="BackSpace_Click"/>
->>>>>>> dc02465a925f8cccca98b81a3f980acdaae58804
+
+            <Button Grid.Column="2" Grid.Row="1" Name="BackSpace" Click="BackSpace_Click">
+                <Path Data="M19.993,4.071H0.638C0.285,4.071,0,4.356,0,4.709v11.212c0,0.353,0.286,0.638,0.638,0.638h19.354
+		c0.353,0,0.638-0.285,0.638-0.638V4.709C20.63,4.356,20.345,4.071,19.993,4.071z M15.226,11.358H8.734l1.886,1.887
+		c0.408,0.408,0.408,1.068,0.001,1.476c-0.409,0.408-1.07,0.408-1.478,0l-3.576-3.574c-0.217-0.219-0.311-0.505-0.296-0.79
+		c-0.001-0.015-0.009-0.026-0.009-0.042s0.008-0.028,0.009-0.043C5.258,9.989,5.353,9.703,5.568,9.486l3.575-3.575
+		c0.408-0.408,1.069-0.408,1.477-0.001c0.408,0.41,0.408,1.071,0,1.478L8.736,9.272h6.489c0.577,0,1.045,0.468,1.045,1.044
+		C16.271,10.891,15.803,11.358,15.226,11.358z" Fill="Black"/>
+            </Button>
+
             <Button Grid.Column="2" Grid.Row="2" Content="9"
                     Style="{StaticResource NumberButton}"
                     Click="NumberClicked"/>
@@ -129,16 +145,24 @@
             <Button Grid.Column="2" Grid.Row="5" Content="."
                     Name="Dot" Click="Dot_Click"/>
 
-            <Button Grid.Column="3" Grid.Row="0" Click="Button_Click">
+            <Button Grid.Column="3" Grid.Row="0" Name="SqrtButton" Click="SqrtButton_Click">
                 <Path Data="M35.494,0c-0.43,0-0.811,0.273-0.947,0.681L19.734,44.64L9.35,27.482C9.169,27.183,8.844,27,8.494,27h-8v2h7.437
 		l11.208,18.518C19.321,47.819,19.646,48,19.994,48c0.036,0,0.072-0.002,0.109-0.006c0.387-0.043,0.714-0.306,0.838-0.675L36.213,2
 		h11.293V0H35.494z" Fill="Black" Height="21.869" Stretch="Fill" Width="25.09"/>
             </Button>
-            <Button Grid.Column="3" Grid.Row="1" Content="/"/>
-            <Button Grid.Column="3" Grid.Row="2" Content="X"/>
+            
+            <Button Grid.Column="3" Grid.Row="1" Content="/"
+                    Name="DivideButton" Click="DivideButton_Click"/>
+            
+            <Button Grid.Column="3" Grid.Row="2" Content="X"
+                    Name="ProductButton" Click="ProductButton_Click"/>
+            
             <Button Grid.Column="3" Grid.Row="3" Content="+"
                     Name="Add" Click="Add_Click"/>
-            <Button Grid.Column="3" Grid.Row="4" Content="-"/>
+            
+            <Button Grid.Column="3" Grid.Row="4" Content="-"
+                    Name="Subtract" Click="Subtract_Click"/>
+            
             <Button Grid.Column="3" Grid.Row="5" Content="="
                     Name="Equals" Click="Equals_Click"/>
         </Grid>

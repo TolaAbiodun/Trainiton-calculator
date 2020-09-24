@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
+
 namespace TrainitonCalculator {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -41,6 +42,7 @@ namespace TrainitonCalculator {
 
         private void Equals_Click(object sender, RoutedEventArgs e) {
             screen.Text = _calculator.EqualsTo(screen.Text);
+            
         }
 
         private void SinButton_Click(object sender, RoutedEventArgs e) {
@@ -50,6 +52,38 @@ namespace TrainitonCalculator {
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void CosButton_Click(object sender, RoutedEventArgs e) {
+            screen.Text = _calculator.Cosine();
+        }
+
+        private void TanButton_Click(object sender, RoutedEventArgs e) {
+            screen.Text = _calculator.Tangent();
+        }
+
+        private void SqrtButton_Click(object sender, RoutedEventArgs e) {
+            screen.Text = _calculator.sqrt();
+        }
+
+        private void PowButton_Click(object sender, RoutedEventArgs e)
+        {
+            screen.Text = _calculator.power();
+        }
+
+        private void Subtract_Click(object sender, RoutedEventArgs e)
+        {
+            _calculator.Subtract();
+        }
+
+        private void ProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            _calculator.Multiply();
+        }
+
+        private void DivideButton_Click(object sender, RoutedEventArgs e)
+        {
+            _calculator.Divide();
         }
     }
 }

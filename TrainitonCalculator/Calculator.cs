@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Linq;
+using System.Windows.Controls;
 
 namespace TrainitonCalculator {
     public class Calculator {
 
         public Calculator(string initialTextOnScreen) {
+            initialTextOnScreen = "0";
             _textOnScreen = initialTextOnScreen;
             _operation = "";
+          
         }
         
         public string NumberPressed(string textOnButton) {
@@ -69,6 +73,23 @@ namespace TrainitonCalculator {
             _lastAnswer = _textOnScreen;
             return _textOnScreen;
         }
+        public string Cosine() {
+            var num = double.Parse(_textOnScreen);
+            var converted = (num * Math.PI) / 180;
+            var result = Math.Cos(converted);
+            _textOnScreen = result.ToString();
+            _lastAnswer = _textOnScreen;
+            return _textOnScreen;
+        }
+
+        public string Tangent() {
+            var num = double.Parse(_textOnScreen);
+            var converted = (num * Math.PI) / 180;
+            var result = Math.Tan(converted);
+            _textOnScreen = result.ToString();
+            _lastAnswer = _textOnScreen;
+            return _textOnScreen;
+        }
 
         public void Add() {
             _startNew = true;
@@ -76,21 +97,94 @@ namespace TrainitonCalculator {
             _operation = "ADD";
         }
 
+        public void Subtract()
+        {
+            _startNew = true;
+            _firstValue = _textOnScreen;
+            _operation = "SUBTRACT";
+        }
+
+
+        public void Multiply()
+        {
+            _startNew = true;
+            _firstValue = _textOnScreen;
+            _operation = "MULTIPLY";
+        }
+
+        public void Divide()
+        {
+            _startNew = true;
+            _firstValue = _textOnScreen;
+            _operation = "DIVIDE";
+        }
+        public string sqrt() {
+                       
+            if (_textOnScreen.Contains("-"))
+            {
+                _textOnScreen = "Error";
+            }
+            else
+            {
+                var number = double.Parse(_textOnScreen);
+                var result = Math.Sqrt(number);
+                _textOnScreen = result.ToString();
+                _lastAnswer = _textOnScreen;   
+            }
+            return _textOnScreen;
+        }
+
+        public string power()
+        {
+            var number = double.Parse(_textOnScreen);
+            var result = Math.Pow(number, 2);
+            _textOnScreen = result.ToString();
+            _lastAnswer = _textOnScreen;
+            return _textOnScreen;
+        }
         public string EqualsTo(string secondValue) {
-            switch (_operation) {
+            switch (_operation)
+            {
                 case "ADD":
                     var first = double.Parse(_firstValue);
                     var second = double.Parse(secondValue);
                     var result = first + second;
                     _textOnScreen = result.ToString();
                     _lastAnswer = _textOnScreen;
-                break;
+                    break;
+
+                case "SUBTRACT":
+                    var firstNum = double.Parse(_firstValue);
+                    var secondNum = double.Parse(secondValue);
+                    var res = firstNum - secondNum;
+                    _textOnScreen = res.ToString();
+                    _lastAnswer = _textOnScreen;
+                    break;
+
+                case "MULTIPLY":
+                    var x = double.Parse(_firstValue);
+                    var y = double.Parse(secondValue);
+                    var product = x*y;
+                    _textOnScreen = product.ToString();
+                    _lastAnswer = _textOnScreen;
+                    break;
+
+                case "DIVIDE":
+                    var dividend = double.Parse(_firstValue);
+                    var divisor = double.Parse(secondValue);
+                    var quotient = dividend / divisor;
+                    _textOnScreen = quotient.ToString();
+                    _lastAnswer = _textOnScreen;
+                    break;
+
                 default:
                     return _lastAnswer;
             }
 
             return _textOnScreen;
         }
+
+
 
         private string _firstValue;
         private string _textOnScreen;
